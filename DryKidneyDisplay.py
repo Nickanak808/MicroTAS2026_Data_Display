@@ -5,7 +5,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 from matplotlib.animation import FuncAnimation
-from IPython.display import HTML
+from IPython.display import HTML, display
 import seaborn as sns
 import plotly.graph_objects as go
 from numpy.f2py.auxfuncs import throw_error
@@ -26,7 +26,7 @@ import sys, numpy as np, platform, psutil
 from plotly.subplots import make_subplots
 import streamlit
 import pickle
-from IPython.display import HTML, display
+
 
 '''
 OCT_Signal_Mapper.ipynb
@@ -57,8 +57,8 @@ with open(folder+"DryKidneyX.pkl", "rb") as file:
 with open(folder+"DryKidneyY.pkl", "rb") as file:
     Y = pickle.load(file)
 
-with open(folder+"DryKidneyZ.pkl", "rb") as file:
-    Z = pickle.load(file)
+#with open(folder+"DryKidneyZ.pkl", "rb") as file:
+#    Z = pickle.load(file)
 
 # Loading the surface
 with open(folder + surface_file, "rb") as file:
@@ -69,5 +69,3 @@ fig.show()
 display(X)
 
 display(Y)
-
-display(Z)
