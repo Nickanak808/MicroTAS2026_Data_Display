@@ -1,0 +1,6 @@
+[theme]
+base = "dark"
+backgroundColor = "#151312"          # page background
+secondaryBackgroundColor = "#151c33" # sidebar, tabs, widgets
+textColor = "#e6e9f2"                # text
+primaryColor = "#4f9dff"             # sliders, active tab highlight
