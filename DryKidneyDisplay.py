@@ -1,71 +1,44 @@
-from unittest import result
-import pandas as pd
-import numpy as np
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-from matplotlib.colors import LogNorm
-from matplotlib.animation import FuncAnimation
-from IPython.display import HTML, display
-import seaborn as sns
-import plotly.graph_objects as go
-from numpy.f2py.auxfuncs import throw_error
-from scipy.interpolate import interp2d, RegularGridInterpolator
-from scipy.ndimage import median_filter
-from scipy.ndimage import uniform_filter
-import math
-import re
-from dataclasses import dataclass
+import pickle
 from pathlib import Path
-import pyarrow as pa
-from scipy.signal import savgol_filter, find_peaks
-import numpy as np
-import pyvista as pv
-import vtk
-import pickle
-import sys, numpy as np, platform, psutil
-from plotly.subplots import make_subplots
-import streamlit
-import pickle
+
+import streamlit as st
+import streamlit.components.v1 as components
+
+st.set_page_config(page_title="Dry Kidney", layout="wide")
+
+# Resolve Data/ relative to this file so it works locally and on Streamlit Cloud
+DATA = Path(__file__).parent / "Data"
 
 
-'''
-OCT_Signal_Mapper.ipynb
-Updated: 20 July 2026
-
-Description: A Jupyter notebook designed to build 3D maps from data
-for later use. Methods will be stored in MnM_Experiment.py, but
-this will be a place to visualize the maps and perform diagnostics.
-'''
+@st.cache_resource(show_spinner="Loading data...")
+def load_pickle(name: str):
+    with open(DATA / name, "rb") as f:
+        return pickle.load(f)
 
 
-# —————————————————————————————————————————————————————————————————————————————————————
-# Loading Data ————————————————————————————————————————————————————————————————————————
-# —————————————————————————————————————————————————————————————————————————————————————
+def as_html(obj) -> str:
+    """Turn whatever was pickled (IPython HTML object or plain string) into an HTML string."""
+    if isinstance(obj, str):
+        return obj
+    if hasattr(obj, "data") and isinstance(obj.data, str):  # IPython.display.HTML
+        return obj.data
+    if hasattr(obj, "_repr_html_"):
+        return obj._repr_html_()
+    raise TypeError(f"Don't know how to render {type(obj)}")
 
-# Path information
-folder = "Data/"
-html_file = "DryKidneyHTMLs.pkl"
-surface_file = "DryKidneySurface.pkl"
 
-# Parsing file
-print("\nLoading data...")
+st.title("Dry Kidney")
 
-# Loading the HTML animations
-with open(folder+"DryKidneyX.pkl", "rb") as file:
-    X = pickle.load(file)
+surface_tab, x_tab, y_tab = st.tabs(["Surface", "Animation X", "Animation Y"])
 
-with open(folder+"DryKidneyY.pkl", "rb") as file:
-    Y = pickle.load(file)
+with surface_tab:
+    fig = load_pickle("DryKidneySurface.pkl")
+    st.plotly_chart(fig, use_container_width=True)
 
-#with open(folder+"DryKidneyZ.pkl", "rb") as file:
-#    Z = pickle.load(file)
+with x_tab:
+    # components.html renders the page in an iframe, so the animation's
+    # JavaScript (play/pause, slider) works as it does in a notebook.
+    components.html(as_html(load_pickle("DryKidneyX.pkl")), height=800, scrolling=True)
 
-# Loading the surface
-with open(folder + surface_file, "rb") as file:
-    fig = pickle.load(file)
-
-fig.show()
-
-display(X)
-
-display(Y)
+with y_tab:
+    components.html(as_html(load_pickle("DryKidneyY.pkl")), height=800, scrolling=True)
