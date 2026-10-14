@@ -52,7 +52,7 @@ NOTES = {
     ("Tissue Phantom in Air", "Top"): "### About this sample\nA PDMS tissue phantom made with coconut milk for optical scattering. Imaged dry in a 2-well chamber slide. The same phantom was used for both imaging conditions.",
     ("Tissue Phantom in Water", "Top"): "### About this sample\nA PDMS tissue phantom made with coconut milk for optical scattering. Imaged in DI water in a 2-well chamber slide. The same phantom was used for both imaging conditions.",
     ("Clear Phantom in Air", "Top"): "### About this sample\nA PDMS tissue phantom made WITHOUT coconut milk for ease of imaging stains via confocal microscopy. Imaged dry in a 2-well chamber slide, which was filled with DI water to allow for staining.",
-    (None, "Surface"): "3D surface resolved from OCT data.\nLeft click + drag to rotate right click + drag to pan, scroll to zoom.",
+    (None, "Surface"): "3D surface resolved from OCT data.\nLeft click + drag to rotate, right click + drag to pan, scroll to zoom.",
     (None, "X"): "Use the controls below the frame to play or step through.",
 }
 # ─────────────────────────────────────────────────────────────────────────────
@@ -219,7 +219,7 @@ st.markdown("**Presenting Author*")
 
 st.subheader("About this app")
 st.markdown("Optical Coherence Tomography is a powerful imaging tool, in no small part because it allows the capture of 3D objects and tissues. Unfortunately, when displaying 3D data on a poster, the results tend to fall a little flat. For this reason, we have prepared a web app such that all the samples discussed in the poster above may be viewed properly!")
-st.markdown("Click between the tabs below to view the four different samples! Each sample has four different 'images' captured: A 3D surface resolved from the raw data, and three videos, each slicing through the raw data along the X, Y, or Z axis.")
+st.markdown("Click between the tabs below to view the five different samples! Each sample has four different 'images' captured: A 3D surface resolved from the raw data, and three videos, each slicing through the raw data along the X, Y, or Z axis.")
 
 tabs = st.tabs(list(SETS.keys()))
 for tab, (label, prefix) in zip(tabs, SETS.items()):
