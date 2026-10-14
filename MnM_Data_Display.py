@@ -51,7 +51,7 @@ NOTES = {
     ("Mouse Kidney in Media", "Top"): "### About this sample\nA freshly sectioned mouse kidney imaged in an 8-well chamber slide filled with RPMI 1640 + 10% FBS media.",
     ("Tissue Phantom in Air", "Top"): "### About this sample\nA PDMS tissue phantom made with coconut milk for optical scattering. Imaged dry in a 2-well chamber slide. The same phantom was used for both imaging conditions.",
     ("Tissue Phantom in Water", "Top"): "### About this sample\nA PDMS tissue phantom made with coconut milk for optical scattering. Imaged in DI water in a 2-well chamber slide. The same phantom was used for both imaging conditions.",
-    ("Clear Phantom in Air", "Top"): "### About this sample\nA PDMS tissue phantom made WITHOUT coconut milk for ease of imaging HFC via confocal microscopy. Imaged dry in a 2-well chamber slide, which was filled with DI water when staining began.",
+    ("Clear Phantom in Air", "Top"): "### About this sample\nA PDMS tissue phantom made WITHOUT coconut milk for ease of imaging stains via confocal microscopy. Imaged dry in a 2-well chamber slide, which was filled with DI water to allow for staining.",
     (None, "Surface"): "3D surface resolved from OCT data.\nLeft click + drag to rotate right click + drag to pan, scroll to zoom.",
     (None, "X"): "Use the controls below the frame to play or step through.",
 }
