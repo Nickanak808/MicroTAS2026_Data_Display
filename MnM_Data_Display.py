@@ -34,7 +34,25 @@ ANIMATIONS = {
 }
 # Optional per-tab overrides of the defaults above, keyed by (tab label, animation).
 # Example: {("Set 2", "Z"): {"height": 900, "max_zoom": 150}}
-OVERRIDES = {}
+OVERRIDES = {
+    ("Mouse Kidney in Media","X"): {"height": 500, "max_zoom": 150},
+    ("Mouse Kidney in Media","Y"): {"height": 500, "max_zoom": 150},
+    ("Tissue Phantom in Water","X"): {"height": 500, "max_zoom": 150},
+    ("Tissue Phantom in Water","Y"): {"height": 500, "max_zoom": 150},
+}
+
+# Text shown above each display, written as Markdown. Keys are (tab label, item),
+# where item is "Surface", "X", "Y" or "Z". Use None as the tab label for text
+# that should appear in every tab; a tab-specific entry takes priority.
+NOTES = {
+    # "Top" goes at the very top of a tab, above everything else.
+    ("Mouse Kidney in Air", "Top"): "### About this sample\nA lightly formalin fixed mouse kidney imaged dry on a glass slide, dropped with PBS to avoid excessive drying.",
+    ("Mouse Kidney in Media", "Top"): "### About this sample\nA freshly sectioned mouse kidney imaged in an 8-well chamber slide filled with RPMI 1640 + 10% FBS media.",
+    ("Tissue Phantom in Air", "Top"): "### About this sample\nA PDMS tissue phantom made with coconut milk for optical scattering. Imaged dry in a 2-well chamber slide. The same phantom was used for both imaging conditions.",
+    ("Tissue Phantom in Water", "Top"): "### About this sample\nA PDMS tissue phantom made with coconut milk for optical scattering. Imaged in DI water in a 2-well chamber slide. The same phantom was used for both imaging conditions.",
+    (None, "Surface"): "3D surface resolved from OCT data.\nDrag to rotate, scroll to zoom!",
+    (None, "X"): "Use the controls below the frame to play or step through.",
+}
 # ─────────────────────────────────────────────────────────────────────────────
 
 with st.sidebar:
@@ -175,13 +193,39 @@ def show_plotly(fig, height: int):
         st.plotly_chart(fig, use_container_width=True, config=config)
 
 
-st.title("Dry Kidney")
+def note(tab_label: str, item: str):
+    text = NOTES.get((tab_label, item)) or NOTES.get((None, item))
+    if text:
+        st.markdown(text)
+
+st.title("Map n' Manipulate: Data Display")
+
+st.subheader("MicroTAS 2026")
+
+st.markdown('''**ASSOCIATED POSTER:**  
+W021.b: *Map n' Manipulate: Using Optical Coherence Tomography & Open Space Microfluidics to Map & Manipulate Intact 3D Tumor Samples*''')
+
+st.markdown('''**AUTHORS:**  
+**Nick Heerema [1,2]***, Adrian Tanskanen [3], Jeanie Malone [3], Aditya Kashyap [1,2], Pierre Lane [3], Govind Kaigala [1,2]''',wrap=True)
+
+affiliations = '''*[1] School of Biomedical Engineering, University of British Columbia, Vancouver, BC, Canada*  
+*[2] M.H. Mohseni Institute of Urologic Sciences, Vancouver, BC, Canada*  
+*[3] Interative Oncology, Department of Basic & Translational Research, BC Cancer Research Institute, Vancouver, BC, Canada*'''
+st.markdown(affiliations, wrap=True)
+
+st.markdown("**Presenting Author*")
+
+st.subheader("About this app")
+st.markdown("Optical Coherence Tomography is a powerful imaging tool, in no small part because it allows the capture of 3D objects and tissues. Unfortunately, when displaying 3D data on a poster, the results tend to fall a little flat. For this reason, we have prepared a web app such that all the samples discussed in the poster above may be viewed properly.")
+st.markdown("Click between the tabs below to view the four different samples! Each sample has four different 'images' captured: A 3D surface resolved from the raw data, and three videos, each slicing through the raw data in the X, Y, or Z axis.")
 
 tabs = st.tabs(list(SETS.keys()))
 for tab, (label, prefix) in zip(tabs, SETS.items()):
     with tab:
         # Surface
+        note(label, "Top")
         st.subheader("Surface")
+        note(label, "Surface")
         surface_path = DATA / f"{prefix}Surface.pkl"
         if surface_path.exists():
             show_plotly(load_pickle(surface_path.name), plot_height)
@@ -196,18 +240,16 @@ for tab, (label, prefix) in zip(tabs, SETS.items()):
                     st.subheader(f"Animation {anim_label}")
                     st.warning(f"Missing file: Data/{path.name}")
                 continue
-            st.subheader(f"Animation {anim_label}")
+            st.subheader(f"Slices along the {anim_label} axis")
+            note(label, anim_label)
             base = {**cfg, **OVERRIDES.get((label, anim_label), {})}
-            anim_height = base["height"]
-            if prefix.__contains__("Wet"):
-                anim_height += 100
             key = f"{label}_{anim_label}"
             # Each animation in each tab has its own window settings.
             with st.expander("Window settings", expanded=False):
                 c1, c2, c3 = st.columns(3)
                 loaded = c1.toggle("Load animation", value=True, key=f"show_{key}",
                                    help="Turn off to free browser memory.")
-                height = c2.slider("Height (px)", 300, 1800, anim_height, 50,
+                height = c2.slider("Height (px)", 300, 1800, base["height"], 50,
                                    key=f"h_{key}")
                 zoom = c3.slider("Max zoom (%)", 25, 300, base["max_zoom"], 5,
                                  key=f"z_{key}")
