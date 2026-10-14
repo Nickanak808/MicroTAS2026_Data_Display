@@ -22,6 +22,7 @@ SETS = {
     "Tissue Phantom in Air": "DryTurtle",
     "Tissue Phantom in Water": "WetTurtle",
     "Clear Phantom in Air": "ClearTurtle",
+    "Strawberry in Air": "Strawberry",
 }
 # Per-animation settings. These are the defaults for the sidebar controls.
 #   suffix:   filename suffix (Data/<prefix><suffix>.pkl)
@@ -52,6 +53,7 @@ NOTES = {
     ("Tissue Phantom in Air", "Top"): "### About this sample\nA PDMS tissue phantom made with coconut milk for optical scattering. Imaged dry in a 2-well chamber slide. The same phantom was used for both imaging conditions.",
     ("Tissue Phantom in Water", "Top"): "### About this sample\nA PDMS tissue phantom made with coconut milk for optical scattering. Imaged in DI water in a 2-well chamber slide. The same phantom was used for both imaging conditions.",
     ("Clear Phantom in Air", "Top"): "### About this sample\nA PDMS tissue phantom made WITHOUT coconut milk for ease of imaging stains via confocal microscopy. Imaged dry in a 2-well chamber slide, which was filled with DI water to allow for staining.",
+    ("Strawberry in Air", "Top"): "### About this sample\nA slice of strawberry, imaged early in the project to give perspective to the capabilities of the platform. Imaged at a lower resolution (100 um), dry, on top of a glass slide.",
     (None, "Surface"): "3D surface resolved from OCT data.\nLeft click + drag to rotate, right click + drag to pan, scroll to zoom.",
     (None, "X"): "Use the controls below the frame to play or step through.",
 }
