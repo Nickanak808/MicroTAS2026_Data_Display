@@ -41,6 +41,7 @@ OVERRIDES = {
     ("Mouse Kidney in Media","Y"): {"height": 500, "max_zoom": 150},
     ("Tissue Phantom in Water","X"): {"height": 500, "max_zoom": 150},
     ("Tissue Phantom in Water","Y"): {"height": 500, "max_zoom": 150},
+    ("Strawberry in Air","Y"): {"height": 550, "max_zoom": 150},
 }
 
 # Text shown above each display, written as Markdown. Keys are (tab label, item),
@@ -221,7 +222,7 @@ st.markdown("**Presenting Author*")
 
 st.subheader("About this app")
 st.markdown("Optical Coherence Tomography is a powerful imaging tool, in no small part because it allows the capture of 3D objects and tissues. Unfortunately, when displaying 3D data on a poster, the results tend to fall a little flat. For this reason, we have prepared a web app such that all the samples discussed in the poster above may be viewed properly!")
-st.markdown("Click between the tabs below to view the five different samples! Each sample has four different 'images' captured: A 3D surface resolved from the raw data, and three videos, each slicing through the raw data along the X, Y, or Z axis.")
+st.markdown("Click between the tabs below to view the six different samples! Each sample has four different 'images' captured: A 3D surface resolved from the raw data, and three videos, each slicing through the raw data along the X, Y, or Z axis.")
 
 tabs = st.tabs(list(SETS.keys()))
 for tab, (label, prefix) in zip(tabs, SETS.items()):
