@@ -21,6 +21,7 @@ SETS = {
     "Mouse Kidney in Media": "WetKidney",
     "Tissue Phantom in Air": "DryTurtle",
     "Tissue Phantom in Water": "WetTurtle",
+    "Clear Phantom in Air": "ClearTurtle",
 }
 # Per-animation settings. These are the defaults for the sidebar controls.
 #   suffix:   filename suffix (Data/<prefix><suffix>.pkl)
@@ -50,7 +51,8 @@ NOTES = {
     ("Mouse Kidney in Media", "Top"): "### About this sample\nA freshly sectioned mouse kidney imaged in an 8-well chamber slide filled with RPMI 1640 + 10% FBS media.",
     ("Tissue Phantom in Air", "Top"): "### About this sample\nA PDMS tissue phantom made with coconut milk for optical scattering. Imaged dry in a 2-well chamber slide. The same phantom was used for both imaging conditions.",
     ("Tissue Phantom in Water", "Top"): "### About this sample\nA PDMS tissue phantom made with coconut milk for optical scattering. Imaged in DI water in a 2-well chamber slide. The same phantom was used for both imaging conditions.",
-    (None, "Surface"): "3D surface resolved from OCT data.\nDrag to rotate, scroll to zoom!",
+    ("Clear Phantom in Water", "Top"): "### About this sample\nA PDMS tissue phantom made WITHOUT coconut milk for ease of imaging HFC via confocal microscopy. Imaged dry in a 2-well chamber slide, which was filled with DI water when staining began.",
+    (None, "Surface"): "3D surface resolved from OCT data.\nLeft click + drag to rotate right click + drag to pan, scroll to zoom.",
     (None, "X"): "Use the controls below the frame to play or step through.",
 }
 # ─────────────────────────────────────────────────────────────────────────────
