@@ -5,7 +5,7 @@ from pathlib import Path
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.set_page_config(page_title="Dry Kidney", layout="wide")
+st.set_page_config(page_title="Map n' Manipulate: Data Display", layout="wide")
 
 DATA = Path(__file__).parent / "Data"
 
