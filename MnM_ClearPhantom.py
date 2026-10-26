@@ -220,7 +220,6 @@ tabs = st.tabs(list(SETS.keys()))
 for tab, (label, prefix) in zip(tabs, SETS.items()):
     with tab:
         # Surface
-        note(label, "Top")
         st.subheader("Surface")
         note(label, "Surface")
         surface_path = DATA / f"{prefix}Surface.pkl"
