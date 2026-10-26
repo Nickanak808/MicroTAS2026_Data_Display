@@ -209,7 +209,7 @@ st.title(page_title)
 
 #st.markdown('''**ASSOCIATED POSTER:**
 #W021.b: *Map n' Manipulate: Using Optical Coherence Tomography & Open Space Microfluidics to Map & Manipulate Intact 3D Tumor Samples*''')
-st.markdown("[Click Here] to return to the start page & poster information.()")
+st.markdown("[Click Here] to return to the start page & poster information.(https://mnmutas26-start-page.streamlit.app)")
 
 #st.markdown('''**AUTHORS:**
 #**Nick Heerema [1,2]***, Adrian Tanskanen [3], Jeanie Malone [3], Aditya Kashyap [1,2], Pierre Lane [3], Govind Kaigala [1,2]''',wrap=True)
@@ -222,12 +222,12 @@ st.markdown("[Click Here] to return to the start page & poster information.()")
 #st.markdown("**Presenting Author*")
 
 st.subheader("Other Samples")
-#st.markdown("Mouse Kidney in Air")
-st.markdown("Mouse Kidney in Media")
-st.markdown("Tissue Phantom in Air")
-st.markdown("Tissue Phantom in Water")
-st.markdown("Clear Phantom in Air")
-st.markdown("Strawberry in Air")
+#st.markdown("[Mouse Kidney in Air](https://mnmutas26-drykidney.streamlit.app)")
+st.markdown("[Mouse Kidney in Media](https://mnmutas26-wetkidney.streamlit.app)")
+st.markdown("[Tissue Phantom in Air](https://mnmutas26-dryphantom.streamlit.app)")
+st.markdown("[Tissue Phantom in Water](https://mnmutas26-wetphantom.streamlit.app)")
+st.markdown("[Clear Phantom in Air](https://mnmutas26-clearphantom.streamlit.app)")
+st.markdown("[Strawberry in Air](https://mnmutas26-strawberry.streamlit.app)")
 
 tabs = st.tabs(list(SETS.keys()))
 for tab, (label, prefix) in zip(tabs, SETS.items()):

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import streamlit as st
 import streamlit.components.v1 as components
-page_title = "MnM: Kidney in Air"
+page_title = "MnM: Clear Phantom in Air"
 st.set_page_config(page_title=page_title, layout="wide")
 
 DATA = Path(__file__).parent / "Data"
@@ -17,11 +17,11 @@ TEXT = st.get_option("theme.textColor") or "#FFFFFF"
 # Tab label -> filename prefix. Files are expected as:
 #   Data/<prefix>Surface.pkl, Data/<prefix>X.pkl, Data/<prefix>Y.pkl
 SETS = {
-    "Mouse Kidney in Air": "DryKidney",
+    #"Mouse Kidney in Air": "DryKidney",
     #"Mouse Kidney in Media": "WetKidney",
     #"Tissue Phantom in Air": "DryTurtle",
     #"Tissue Phantom in Water": "WetTurtle",
-    #"Clear Phantom in Air": "ClearTurtle",
+    "Clear Phantom in Air": "ClearTurtle",
     #"Strawberry in Air": "Strawberry",
 }
 # Per-animation settings. These are the defaults for the sidebar controls.
@@ -205,29 +205,29 @@ def note(tab_label: str, item: str):
 
 st.title(page_title)
 
-st.subheader("MicroTAS 2026")
+#st.subheader("MicroTAS 2026")
 
-st.markdown('''**ASSOCIATED POSTER:**  
-W021.b: *Map n' Manipulate: Using Optical Coherence Tomography & Open Space Microfluidics to Map & Manipulate Intact 3D Tumor Samples*''')
+#st.markdown('''**ASSOCIATED POSTER:**
+#W021.b: *Map n' Manipulate: Using Optical Coherence Tomography & Open Space Microfluidics to Map & Manipulate Intact 3D Tumor Samples*''')
+st.markdown("[Click Here] to return to the start page & poster information.(https://mnmutas26-start-page.streamlit.app)")
 
-st.markdown('''**AUTHORS:**  
-**Nick Heerema [1,2]***, Adrian Tanskanen [3], Jeanie Malone [3], Aditya Kashyap [1,2], Pierre Lane [3], Govind Kaigala [1,2]''',wrap=True)
+#st.markdown('''**AUTHORS:**
+#**Nick Heerema [1,2]***, Adrian Tanskanen [3], Jeanie Malone [3], Aditya Kashyap [1,2], Pierre Lane [3], Govind Kaigala [1,2]''',wrap=True)
 
-affiliations = '''*[1] School of Biomedical Engineering, University of British Columbia, Vancouver, BC, Canada*  
-*[2] M.H. Mohseni Institute of Urologic Sciences, Vancouver, BC, Canada*  
-*[3] Interative Oncology, Department of Basic & Translational Research, BC Cancer Research Institute, Vancouver, BC, Canada*'''
-st.markdown(affiliations, wrap=True)
+#affiliations = '''*[1] School of Biomedical Engineering, University of British Columbia, Vancouver, BC, Canada*
+#*[2] M.H. Mohseni Institute of Urologic Sciences, Vancouver, BC, Canada*
+#*[3] Interative Oncology, Department of Basic & Translational Research, BC Cancer Research Institute, Vancouver, BC, Canada*'''
+#st.markdown(affiliations, wrap=True)
 
-st.markdown("**Presenting Author*")
+#st.markdown("**Presenting Author*")
 
 st.subheader("Other Samples")
-st.markdown("Start Page")
-#st.markdown("Mouse Kidney in Air")
-st.markdown("Mouse Kidney in Media")
-st.markdown("Tissue Phantom in Air")
-st.markdown("Tissue Phantom in Water")
-st.markdown("Clear Phantom in Air")
-st.markdown("Strawberry in Air")
+st.markdown("[Mouse Kidney in Air](https://mnmutas26-drykidney.streamlit.app)")
+st.markdown("[Mouse Kidney in Media](https://mnmutas26-wetkidney.streamlit.app)")
+st.markdown("[Tissue Phantom in Air](https://mnmutas26-dryphantom.streamlit.app)")
+st.markdown("[Tissue Phantom in Water](https://mnmutas26-wetphantom.streamlit.app)")
+#st.markdown("[Clear Phantom in Air](https://mnmutas26-clearphantom.streamlit.app)")
+st.markdown("[Strawberry in Air](https://mnmutas26-strawberry.streamlit.app)")
 
 tabs = st.tabs(list(SETS.keys()))
 for tab, (label, prefix) in zip(tabs, SETS.items()):

@@ -226,8 +226,8 @@ st.markdown("Click the links below to view the six different samples! Each sampl
 
 st.subheader("Other Samples")
 st.markdown("[Mouse Kidney in Air](https://mnmutas26-drykidney.streamlit.app)")
-st.markdown("Mouse Kidney in Media")
-st.markdown("Tissue Phantom in Air")
-st.markdown("Tissue Phantom in Water")
-st.markdown("Clear Phantom in Air")
-st.markdown("Strawberry in Air")
+st.markdown("[Mouse Kidney in Media](https://mnmutas26-wetkidney.streamlit.app)")
+st.markdown("[Tissue Phantom in Air](https://mnmutas26-dryphantom.streamlit.app)")
+st.markdown("[Tissue Phantom in Water](https://mnmutas26-wetphantom.streamlit.app)")
+st.markdown("[Clear Phantom in Air](https://mnmutas26-clearphantom.streamlit.app)")
+st.markdown("[Strawberry in Air](https://mnmutas26-strawberry.streamlit.app)")
