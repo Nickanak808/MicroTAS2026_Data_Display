@@ -224,7 +224,7 @@ st.subheader("About this app")
 st.markdown("Optical Coherence Tomography is a powerful imaging tool, in no small part because it allows the capture of 3D objects and tissues. Unfortunately, when displaying 3D data on a poster, the results tend to fall a little flat. For this reason, we have prepared a web app such that all the samples discussed in the poster above may be viewed properly!")
 st.markdown("Click the links below to view the six different samples! Each sample has four different 'images' captured: A 3D surface resolved from the raw data, and three videos, each slicing through the raw data along the X, Y, or Z axis.")
 
-st.subheader("Other Samples")
+st.subheader("Sample Data")
 st.markdown("[Mouse Kidney in Air](https://mnmutas26-drykidney.streamlit.app)")
 st.markdown("[Mouse Kidney in Media](https://mnmutas26-wetkidney.streamlit.app)")
 st.markdown("[Tissue Phantom in Air](https://mnmutas26-dryphantom.streamlit.app)")
