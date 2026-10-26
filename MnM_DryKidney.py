@@ -204,11 +204,8 @@ def note(tab_label: str, item: str):
         st.markdown(text)
 
 st.title(page_title)
+note("Mouse Kidney in Air", "Top")
 
-#st.subheader("MicroTAS 2026")
-
-#st.markdown('''**ASSOCIATED POSTER:**
-#W021.b: *Map n' Manipulate: Using Optical Coherence Tomography & Open Space Microfluidics to Map & Manipulate Intact 3D Tumor Samples*''')
 st.markdown("[Click Here](https://mnmutas26-start-page.streamlit.app) to return to the start page & poster information.")
 
 #st.markdown('''**AUTHORS:**
@@ -233,7 +230,6 @@ tabs = st.tabs(list(SETS.keys()))
 for tab, (label, prefix) in zip(tabs, SETS.items()):
     with tab:
         # Surface
-        note(label, "Top")
         st.subheader("Surface")
         note(label, "Surface")
         surface_path = DATA / f"{prefix}Surface.pkl"
