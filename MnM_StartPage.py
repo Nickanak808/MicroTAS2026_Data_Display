@@ -225,7 +225,7 @@ st.markdown("Optical Coherence Tomography is a powerful imaging tool, in no smal
 st.markdown("Click the links below to view the six different samples! Each sample has four different 'images' captured: A 3D surface resolved from the raw data, and three videos, each slicing through the raw data along the X, Y, or Z axis.")
 
 st.subheader("Other Samples")
-st.markdown("Mouse Kidney in Air")
+st.markdown("[Mouse Kidney in Air](https://mnmutas26-drykidney.streamlit.app)")
 st.markdown("Mouse Kidney in Media")
 st.markdown("Tissue Phantom in Air")
 st.markdown("Tissue Phantom in Water")

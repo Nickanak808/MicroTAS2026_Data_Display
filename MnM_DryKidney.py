@@ -205,20 +205,20 @@ def note(tab_label: str, item: str):
 
 st.title(page_title)
 
-st.subheader("MicroTAS 2026")
+#st.subheader("MicroTAS 2026")
 
-st.markdown('''**ASSOCIATED POSTER:**  
-W021.b: *Map n' Manipulate: Using Optical Coherence Tomography & Open Space Microfluidics to Map & Manipulate Intact 3D Tumor Samples*''')
+#st.markdown('''**ASSOCIATED POSTER:**
+#W021.b: *Map n' Manipulate: Using Optical Coherence Tomography & Open Space Microfluidics to Map & Manipulate Intact 3D Tumor Samples*''')
 
-st.markdown('''**AUTHORS:**  
-**Nick Heerema [1,2]***, Adrian Tanskanen [3], Jeanie Malone [3], Aditya Kashyap [1,2], Pierre Lane [3], Govind Kaigala [1,2]''',wrap=True)
+#st.markdown('''**AUTHORS:**
+#**Nick Heerema [1,2]***, Adrian Tanskanen [3], Jeanie Malone [3], Aditya Kashyap [1,2], Pierre Lane [3], Govind Kaigala [1,2]''',wrap=True)
 
-affiliations = '''*[1] School of Biomedical Engineering, University of British Columbia, Vancouver, BC, Canada*  
-*[2] M.H. Mohseni Institute of Urologic Sciences, Vancouver, BC, Canada*  
-*[3] Interative Oncology, Department of Basic & Translational Research, BC Cancer Research Institute, Vancouver, BC, Canada*'''
-st.markdown(affiliations, wrap=True)
+#affiliations = '''*[1] School of Biomedical Engineering, University of British Columbia, Vancouver, BC, Canada*
+#*[2] M.H. Mohseni Institute of Urologic Sciences, Vancouver, BC, Canada*
+#*[3] Interative Oncology, Department of Basic & Translational Research, BC Cancer Research Institute, Vancouver, BC, Canada*'''
+#st.markdown(affiliations, wrap=True)
 
-st.markdown("**Presenting Author*")
+#st.markdown("**Presenting Author*")
 
 st.subheader("Other Samples")
 st.markdown("Start Page")
