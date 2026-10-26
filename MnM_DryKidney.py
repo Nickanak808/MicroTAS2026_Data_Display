@@ -209,7 +209,7 @@ st.title(page_title)
 
 #st.markdown('''**ASSOCIATED POSTER:**
 #W021.b: *Map n' Manipulate: Using Optical Coherence Tomography & Open Space Microfluidics to Map & Manipulate Intact 3D Tumor Samples*''')
-
+st.markdown("Start Page")
 st.markdown('''**AUTHORS:**
 **Nick Heerema [1,2]***, Adrian Tanskanen [3], Jeanie Malone [3], Aditya Kashyap [1,2], Pierre Lane [3], Govind Kaigala [1,2]''',wrap=True)
 
@@ -221,7 +221,6 @@ st.markdown('''**AUTHORS:**
 #st.markdown("**Presenting Author*")
 
 st.subheader("Other Samples")
-st.markdown("Start Page")
 #st.markdown("Mouse Kidney in Air")
 st.markdown("Mouse Kidney in Media")
 st.markdown("Tissue Phantom in Air")
