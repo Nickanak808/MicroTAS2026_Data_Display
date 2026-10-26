@@ -208,16 +208,6 @@ note("Mouse Kidney in Air", "Top")
 
 st.markdown("[Click Here](https://mnmutas26-start-page.streamlit.app) to return to the start page & poster information.")
 
-#st.markdown('''**AUTHORS:**
-#**Nick Heerema [1,2]***, Adrian Tanskanen [3], Jeanie Malone [3], Aditya Kashyap [1,2], Pierre Lane [3], Govind Kaigala [1,2]''',wrap=True)
-
-#affiliations = '''*[1] School of Biomedical Engineering, University of British Columbia, Vancouver, BC, Canada*
-#*[2] M.H. Mohseni Institute of Urologic Sciences, Vancouver, BC, Canada*
-#*[3] Interative Oncology, Department of Basic & Translational Research, BC Cancer Research Institute, Vancouver, BC, Canada*'''
-#st.markdown(affiliations, wrap=True)
-
-#st.markdown("**Presenting Author*")
-
 st.subheader("Other Samples")
 #st.markdown("[Mouse Kidney in Air](https://mnmutas26-drykidney.streamlit.app)")
 st.markdown("[Mouse Kidney in Media](https://mnmutas26-wetkidney.streamlit.app)")
